@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  video: MyString
+  video_file_name: MyString
+  video_content_type: MyString
+  video_file_size: 1
+  image: MyString
+  syllabus: MyText
+  language: MyString
+  hours: 1
+  prerequisites: MyText
+  start_date: 2014-05-06
+  end_date: 2014-05-06
+  teacher_id: 1
+
+two:
+  title: MyString
+  description: MyString
+  video: MyString
+  video_file_name: MyString
+  video_content_type: MyString
+  video_file_size: 1
+  image: MyString
+  syllabus: MyText
+  language: MyString
+  hours: 1
+  prerequisites: MyText
+  start_date: 2014-05-06
+  end_date: 2014-05-06
+  teacher_id: 1

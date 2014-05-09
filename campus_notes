@@ -1,0 +1,41 @@
+### SCAFFOLD ## created 
+user teacher:boolean site_admin:boolean first_name:string last_name:string image_url:string about_me:text phone:string institution:string picture:string education:string gender:string location:string birthday:date 
+
+### SCAFFOLD ## created 
+course title:string description:string video:string video_file_name:string video_content_type:string video_file_size:integer image:string syllabus:text language:string hours:integer prerequisites:text start_date:date end_date:date teacher_id:integer 
+
+
+### model  ## created 
+  course_section course_id:integer section_id:integer title:string lecture_notes:text lecture_url:string video:string video_file_name:string video_content_type:string video_file_size:integer image:string 
+
+### model ## created 
+    section_assessment section_id:integer assessment_id:integer
+
+### model ## created 
+      section_question section_id:integer content:text 
+
+### model # created 
+          section_choice section_question_id:integer content:text correct:boolean
+
+
+
+# Record keeping 
+## models created 
+
+
+student_answer_section_question user_id:integer section_question_id:integer section_choice_id:integer correct:boolean
+
+course_teacher course_id:integer teacher_id:integer 
+# allows multiple teachers 
+
+# grade will be created using a partial to review student involvment in course 
+student_enrollment_record user_id:integer course_id:integer date_enrolled:date completed:boolean date_completed:date completion_status:integer grade:integer 
+
+
+
+
+
+# Extra for later 
+
+teacher_institution teacher_id:integer institution:string 
+

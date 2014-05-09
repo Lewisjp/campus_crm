@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @course.video %>
+</p>
+
+<p>
+  <strong>Video file name:</strong>
+  <%= @course.video_file_name %>
+</p>
+
+<p>
+  <strong>Video content type:</strong>
+  <%= @course.video_content_type %>
+</p>
+
+<p>
+  <strong>Video file size:</strong>
+  <%= @course.video_file_size %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @course.image %>
+</p>
+
+<p>
+  <strong>Syllabus:</strong>
+  <%= @course.syllabus %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @course.language %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @course.hours %>
+</p>
+
+<p>
+  <strong>Prerequisites:</strong>
+  <%= @course.prerequisites %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @course.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @course.end_date %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @course.teacher_id %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

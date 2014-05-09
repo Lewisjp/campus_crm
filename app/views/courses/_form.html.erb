@@ -1,0 +1,81 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :video %><br>
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :video_file_name %><br>
+    <%= f.text_field :video_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :video_content_type %><br>
+    <%= f.text_field :video_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :video_file_size %><br>
+    <%= f.number_field :video_file_size %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :syllabus %><br>
+    <%= f.text_area :syllabus %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.number_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :prerequisites %><br>
+    <%= f.text_area :prerequisites %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_id %><br>
+    <%= f.number_field :teacher_id %>
+  </div>
+
+  
+  <%= f.fields_for :coursesection do |builder| %>
+    <%= render 'coursesection', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Course Section", f, :questions %>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
