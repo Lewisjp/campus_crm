@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_section.course_id %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @course_section.section_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course_section.title %>
+</p>
+
+<p>
+  <strong>Lecture notes:</strong>
+  <%= @course_section.lecture_notes %>
+</p>
+
+<p>
+  <strong>Lecture url:</strong>
+  <%= @course_section.lecture_url %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @course_section.video %>
+</p>
+
+<p>
+  <strong>Video file name:</strong>
+  <%= @course_section.video_file_name %>
+</p>
+
+<p>
+  <strong>Video content type:</strong>
+  <%= @course_section.video_content_type %>
+</p>
+
+<p>
+  <strong>Video file size:</strong>
+  <%= @course_section.video_file_size %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @course_section.image %>
+</p>
+
+<%= link_to 'Edit', edit_course_section_path(@course_section) %> |
+<%= link_to 'Back', course_sections_path %>

@@ -1,0 +1,57 @@
+<%= form_for(@course_section) do |f| %>
+  <% if @course_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_section.errors.count, "error") %> prohibited this course_section from being saved:</h2>
+
+      <ul>
+      <% @course_section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.number_field :course_id %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id %><br>
+    <%= f.number_field :section_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :lecture_notes %><br>
+    <%= f.text_area :lecture_notes %>
+  </div>
+  <div class="field">
+    <%= f.label :lecture_url %><br>
+    <%= f.text_field :lecture_url %>
+  </div>
+  <div class="field">
+    <%= f.label :video %><br>
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :video_file_name %><br>
+    <%= f.text_field :video_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :video_content_type %><br>
+    <%= f.text_field :video_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :video_file_size %><br>
+    <%= f.number_field :video_file_size %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

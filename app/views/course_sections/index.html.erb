@@ -1,0 +1,43 @@
+<h1>Listing course_sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Section</th>
+      <th>Title</th>
+      <th>Lecture notes</th>
+      <th>Lecture url</th>
+      <th>Video</th>
+      <th>Video file name</th>
+      <th>Video content type</th>
+      <th>Video file size</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_sections.each do |course_section| %>
+      <tr>
+        <td><%= course_section.course_id %></td>
+        <td><%= course_section.section_id %></td>
+        <td><%= course_section.title %></td>
+        <td><%= course_section.lecture_notes %></td>
+        <td><%= course_section.lecture_url %></td>
+        <td><%= course_section.video %></td>
+        <td><%= course_section.video_file_name %></td>
+        <td><%= course_section.video_content_type %></td>
+        <td><%= course_section.video_file_size %></td>
+        <td><%= course_section.image %></td>
+        <td><%= link_to 'Show', course_section %></td>
+        <td><%= link_to 'Edit', edit_course_section_path(course_section) %></td>
+        <td><%= link_to 'Destroy', course_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course section', new_course_section_path %>
