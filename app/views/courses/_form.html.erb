@@ -67,14 +67,6 @@
     <%= f.label :teacher_id %><br>
     <%= f.number_field :teacher_id %>
   </div>
-
-  
-  <%= f.fields_for :coursesection do |builder| %>
-    <%= render 'coursesection', f: builder %>
-  <% end %>
-  <%= link_to_add_fields "Add Course Section", f, :questions %>
-  
-
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -30,8 +30,8 @@
         <td><%= course_section.video_content_type %></td>
         <td><%= course_section.video_file_size %></td>
         <td><%= course_section.image %></td>
-        <td><%= link_to 'Show', course_section %></td>
-        <td><%= link_to 'Edit', edit_course_section_path(course_section) %></td>
+        <td><%= link_to 'Show', course_course_sections_path(course_section.course, course_section) %></td>
+        <td><%= link_to 'Edit', edit_course_course_section_path(course_section.course, course_section) %></td>
         <td><%= link_to 'Destroy', course_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -40,4 +40,3 @@
 
 <br>
 
-<%= link_to 'New Course section', new_course_section_path %>

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  resources :course_sections
+  resources :course_sections, only: :index
 
   resources :users
 
-  resources :courses
+  resources :courses do
+    resources :course_sections
+  end
+
+  root to: 'courses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -34,7 +34,6 @@ student_enrollment_record user_id:integer course_id:integer date_enrolled:date c
 
 
 
-
 # Extra for later 
 
 teacher_institution teacher_id:integer institution:string 

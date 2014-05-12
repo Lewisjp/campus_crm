@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
-  attr_accessible :title, :coursesections_attributes
-  has_many :coursesections
-  accepts_nested_attributes_for :coursesections, allow_destroy: true 
+	attr_accessible :course_section, :title
+
+	has_many :course_sections
+	validates_presence_of :title
 end
