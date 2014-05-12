@@ -5,7 +5,7 @@ user teacher:boolean site_admin:boolean first_name:string last_name:string image
 course title:string description:string video:string video_file_name:string video_content_type:string video_file_size:integer image:string syllabus:text language:string hours:integer prerequisites:text start_date:date end_date:date teacher_id:integer 
 
 
-### model  ## created 
+### SCAFFOLD   ## created 
   course_section course_id:integer section_id:integer title:string lecture_notes:text lecture_url:string video:string video_file_name:string video_content_type:string video_file_size:integer image:string 
 
 ### model ## created 
