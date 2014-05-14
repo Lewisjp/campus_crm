@@ -8,7 +8,7 @@ class CourseSectionsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @destinations }
+      format.json { render json: @course_sections }
     end
   end
 
@@ -20,7 +20,7 @@ class CourseSectionsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @course_sections }
+      format.json { render json: @course_section }
     end
   end
 
@@ -29,23 +29,23 @@ class CourseSectionsController < ApplicationController
     @course = Course.find(params[:course_id])
     @course_section = CourseSection.new
 
-    # respond_to do |format|
-    #   format.html # new.html.erb
-    #   format.json { render json: @course_section }
-    # end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @course_section }
+    end
   end
 
   # GET /course_sections/1/edit
   def edit
-    @course_section = CourseSection.find(params[:course_id])
-    @course = Course.find(params[:id])
+    @course_section = CourseSection.find(params[:id])
+    @course = Course.find(params[:course_id])
   end
 
   # POST /course_sections
   # POST /course_sections.json
   def create
     @course = Course.find(params[:course_id])
-    @course_section = @course.course_sections.new(params[:coursesection])
+    @course_section = @course.course_sections.new(params[:course_section])
 
     respond_to do |format|
       if @course_section.save
@@ -62,14 +62,14 @@ class CourseSectionsController < ApplicationController
   # PATCH/PUT /course_sections/1.json
   def update
     @course_section = CourseSection.find(params[:id])
-    @course = @coursesection.course
+    @course = @course_section.course
 
     respond_to do |format|
-      if @course_section.update_attributes(params[:coursesection])
-        format.html { redirect_to @course_section, notice: 'Course section was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course_section }
+      if @course_section.update_attributes(params[:course_section])
+        format.html { redirect_to course_course_section_path(@course_section.course, @course_section), notice: 'Course section was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: "edit" }
         format.json { render json: @course_section.errors, status: :unprocessable_entity }
       end
     end
@@ -81,7 +81,7 @@ class CourseSectionsController < ApplicationController
     @course_section = CourseSection.find(params[:id])
     @course_section.destroy
     respond_to do |format|
-      format.html { redirect_to course_sections_url }
+      format.html { redirect_to course_sections_url, notice: 'Course Section was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

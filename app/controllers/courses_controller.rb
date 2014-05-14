@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @trips }
+      format.json { render json: @courses }
     end
 
   end
@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @trip }
+      format.json { render json: @course }
     end    
   end
 
@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @trip }
+      format.json { render json: @course }
     end
   end
 
@@ -58,10 +58,10 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
-    @course = Course.new(params[:course])
+    @course = Course.find(params[:id])
 
     respond_to do |format|
-      if @course.update(course_params)
+      if @course.update_attributes(params[:course])
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { render :show, status: :ok, location: @course }
       else
@@ -74,8 +74,8 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
-    @course = Course.new(params[:id])
-    @course.destroy
+    @course = Course.find(params[:id])
+    @course
 
     @course.destroy
     respond_to do |format|

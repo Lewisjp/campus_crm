@@ -38,3 +38,13 @@ student_enrollment_record user_id:integer course_id:integer date_enrolled:date c
 
 teacher_institution teacher_id:integer institution:string 
 
+
+# removed from course_sections show
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.number_field :course_id %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id %><br>
+    <%= f.number_field :section_id %>
+  </div>

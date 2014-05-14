@@ -11,14 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :section_id %><br>
-    <%= f.number_field :section_id %>
-  </div>
+  <%= f.hidden_field :course_id, :value => @course.id %>
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -54,4 +48,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>
