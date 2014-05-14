@@ -16,7 +16,6 @@ class CourseSectionsController < ApplicationController
   # GET /course_sections/1.json
   def show
     @course = Course.find(params[:course_id])
-    @course_section = CourseSection.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,7 +36,6 @@ class CourseSectionsController < ApplicationController
 
   # GET /course_sections/1/edit
   def edit
-    @course_section = CourseSection.find(params[:id])
     @course = Course.find(params[:course_id])
   end
 
@@ -61,7 +59,6 @@ class CourseSectionsController < ApplicationController
   # PATCH/PUT /course_sections/1
   # PATCH/PUT /course_sections/1.json
   def update
-    @course_section = CourseSection.find(params[:id])
     @course = @course_section.course
 
     respond_to do |format|
@@ -78,7 +75,6 @@ class CourseSectionsController < ApplicationController
   # DELETE /course_sections/1
   # DELETE /course_sections/1.json
   def destroy
-    @course_section = CourseSection.find(params[:id])
     @course_section.destroy
     respond_to do |format|
       format.html { redirect_to course_sections_url, notice: 'Course Section was successfully destroyed.' }

@@ -16,7 +16,6 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,7 +35,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-    @course = Course.find(params[:id])
+
   end
 
   # POST /courses
@@ -58,7 +57,6 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
-    @course = Course.find(params[:id])
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
@@ -74,8 +72,6 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
-    @course = Course.find(params[:id])
-    @course
 
     @course.destroy
     respond_to do |format|
